@@ -9,11 +9,7 @@ export const useNavigation = () => {
     const router = useRouter()
     const params = useParams()
     const pathname = usePathname()
-    
-    let searchParams = null;
-    if (typeof window !== 'undefined') {
-        searchParams = useSearchParams();
-    }
+    const searchParams = useSearchParams()
 
 
 

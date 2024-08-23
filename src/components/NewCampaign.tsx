@@ -9,7 +9,7 @@ import { toast } from 'sonner'
 
 
 
-function NewCampaign({ active, setActive, selected }: any) {
+function NewCampaign({ active, setActive }: any) {
     const { setEmail, email } = useEmails()
     const { loading, setLoading, newCampaign, handleChange, setNewCampaign, saveCampaign, startNewCampaign, sendCampaign } = useCampaigns()
     const {user} = useAppContext()
@@ -48,7 +48,7 @@ function NewCampaign({ active, setActive, selected }: any) {
     };
 
     useEffect(() => {
-        if (!selected) startNewCampaign();        
+        startNewCampaign();        
         setLoading(false);
     }, [])
     return (

@@ -1,3 +1,5 @@
+'use client'
+
 import { useParams, usePathname, useRouter, useSearchParams } from "next/navigation"
 import { useState } from "react"
 

@@ -8,11 +8,12 @@ const config: Config = {
   ],
   theme: {
     extend: {
-      backgroundImage: {
-        "gradient-radial": "radial-gradient(var(--tw-gradient-stops))",
-        "gradient-conic":
-          "conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))",
+      fontFamily: {
+        PTSans: ['PT Sans', 'sans-serif'], // You can name it anything, here it's extending 'sans'
       },
+      container: {
+        center: true
+      }
     },
   },
   plugins: [],

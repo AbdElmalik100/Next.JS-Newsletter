@@ -1,0 +1,26 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+@import url('https://fonts.googleapis.com/css2?family=PT+Sans:ital,wght@0,400;0,700;1,400;1,700&display=swap');
+
+
+@layer base {
+  * {
+    @apply box-border
+  }
+  body {
+    @apply text-base font-PTSans
+  }
+  input {
+    @apply outline-none
+  }
+  .success-error-message {
+    @apply text-center italic p-2 text-base rounded-lg;
+    &.success {
+      @apply bg-green-100 border border-green-800 text-green-800;
+    }
+    &.error {
+      @apply bg-rose-100 border border-rose-800 text-rose-800;
+    }
+  }
+}

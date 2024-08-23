@@ -4,7 +4,7 @@ import { useNavigation } from "@/hooks/useNavigation";
 import { supabase } from "@/lib/supabase";
 import { isValidEmail } from "@/lib/utils";
 import { UserForm } from "@/types";
-import { Suspense, useState } from "react";
+import { useState } from "react";
 
 
 
@@ -47,46 +47,45 @@ function Login() {
     }
 
     return (
-        <Suspense>
-            <div className="login-page min-h-screen bg-gray-100 py-8">
-                <div className="login-box p-8 py-10 rounded-lg shadow-lg w-[400px] mx-auto bg-white flex flex-col gap-4">
-                    <h2 className="text-3xl font-bold text-center">Login</h2>
-                    <label>
-                        <span className="block mb-1">Email address</span>
-                        <input
-                            className="p-2 px-4 rounded-lg border w-full"
-                            type="email"
-                            name="email"
-                            placeholder="me@mail.com"
-                            value={userForm.email}
-                            onChange={(e) => setUserForm({ ...userForm, email: e.target.value })}
-                        />
-                    </label>
-                    <label>
-                        <span className="block mb-1">Password</span>
-                        <input
-                            className="p-2 px-4 rounded-lg border w-full"
-                            type="password"
-                            name="password"
-                            placeholder="Enter Your password"
-                            value={userForm.password}
-                            onChange={(e) => setUserForm({ ...userForm, password: e.target.value })}
-                        />
-                    </label>
-                    {
-                        error &&
-                        <span className="block p-2 px-3 text-center bg-rose-100 text-rose-800 border-rose-800 rounded-lg">
-                            {error}
-                        </span>
-                    }
-                    <button className={`bg-red-800 text-white mt-5 transition ease-in-out hover:bg-red-600 p-2 px-5 rounded-lg ${loading ? 'opacity-50 hover:bg-red-800' : ''}`}
-                        disabled={loading ? true : false}
-                        onClick={login}>
-                        {loading ? 'Loading...' : 'Login'}
-                    </button>
-                </div>
+
+        <div className="login-page min-h-screen bg-gray-100 py-8">
+            <div className="login-box p-8 py-10 rounded-lg shadow-lg w-[400px] mx-auto bg-white flex flex-col gap-4">
+                <h2 className="text-3xl font-bold text-center">Login</h2>
+                <label>
+                    <span className="block mb-1">Email address</span>
+                    <input
+                        className="p-2 px-4 rounded-lg border w-full"
+                        type="email"
+                        name="email"
+                        placeholder="me@mail.com"
+                        value={userForm.email}
+                        onChange={(e) => setUserForm({ ...userForm, email: e.target.value })}
+                    />
+                </label>
+                <label>
+                    <span className="block mb-1">Password</span>
+                    <input
+                        className="p-2 px-4 rounded-lg border w-full"
+                        type="password"
+                        name="password"
+                        placeholder="Enter Your password"
+                        value={userForm.password}
+                        onChange={(e) => setUserForm({ ...userForm, password: e.target.value })}
+                    />
+                </label>
+                {
+                    error &&
+                    <span className="block p-2 px-3 text-center bg-rose-100 text-rose-800 border-rose-800 rounded-lg">
+                        {error}
+                    </span>
+                }
+                <button className={`bg-red-800 text-white mt-5 transition ease-in-out hover:bg-red-600 p-2 px-5 rounded-lg ${loading ? 'opacity-50 hover:bg-red-800' : ''}`}
+                    disabled={loading ? true : false}
+                    onClick={login}>
+                    {loading ? 'Loading...' : 'Login'}
+                </button>
             </div>
-        </Suspense>
+        </div>
     )
 }
 

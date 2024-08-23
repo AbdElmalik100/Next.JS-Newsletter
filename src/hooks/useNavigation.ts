@@ -1,5 +1,3 @@
-'use client'
-
 import { useParams, usePathname, useRouter, useSearchParams } from "next/navigation"
 import { useState } from "react"
 
@@ -10,8 +8,12 @@ export const useNavigation = () => {
 
     const router = useRouter()
     const params = useParams()
-    const searchParams = useSearchParams()
     const pathname = usePathname()
+    
+    let searchParams = null;
+    if (typeof window !== 'undefined') {
+        searchParams = useSearchParams();
+    }
 
 
 

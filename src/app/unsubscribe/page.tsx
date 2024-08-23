@@ -4,7 +4,7 @@ import banner from "../../../public/banner.png";
 import { useState } from "react";
 import { isValidEmail } from "@/lib/utils";
 
-function unsubscribe() {
+function Unsubscribe() {
     const [email, setEmail] = useState<string>("");
     const [loading, setLoading] = useState<boolean>(false)
     const [success, setSuccess] = useState<boolean | undefined>(undefined)
@@ -76,7 +76,7 @@ function unsubscribe() {
     );
 }
 
-export default unsubscribe;
+export default Unsubscribe;
 
 
 

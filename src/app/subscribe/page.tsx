@@ -5,7 +5,7 @@ import { useState } from "react";
 import { isValidEmail } from "@/lib/utils";
 import { useAppContext } from "@/context";
 
-function subscribe() {
+function Subscribe() {
     const { supabase } = useAppContext()
     const [email, setEmail] = useState<string>("");
     const [loading, setLoading] = useState<boolean>(false)
@@ -80,4 +80,4 @@ function subscribe() {
     );
 }
 
-export default subscribe;
+export default Subscribe;

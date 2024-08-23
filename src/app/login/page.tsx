@@ -6,7 +6,7 @@ import { isValidEmail } from "@/lib/utils";
 import { UserForm } from "@/types";
 import { useState } from "react";
 
-function login() {
+function Login() {
     const [userForm, setUserForm] = useState<UserForm>({
         email: '',
         password: ''
@@ -86,4 +86,4 @@ function login() {
     )
 }
 
-export default login;
+export default Login;
